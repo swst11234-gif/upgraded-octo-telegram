@@ -1,54 +1,56 @@
-+<!doctype html>
-+<html lang="ru">
-+  <head>
-+    <meta charset="UTF-8" />
-+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-+    <title>updated octo telegram</title>
-+    <link rel="stylesheet" href="./styles.css" />
-+  </head>
-+  <body>
-+    <main class="app">
-+      <section id="landing-screen" class="screen is-active">
-+        <h1>updated octo telegram</h1>
-+        <p>Анонимный чат 1-на-1. Без аккаунта. Ничего не сохраняется.</p>
-+        <button id="connect-btn" class="btn btn-accent">Подключиться</button>
-+      </section>
- 
-+      <section id="searching-screen" class="screen">
-+        <h2>Поиск собеседника...</h2>
-+        <button id="cancel-btn" class="btn">Отменить</button>
-+      </section>
-+
-+      <section id="chat-screen" class="screen">
-+        <header class="chat-header">
-+          <span id="status-pill" class="status-pill status-connected">Подключено</span>
-+          <div class="header-actions">
-+            <button id="disconnect-btn" class="btn">Отключиться</button>
-+            <button id="report-btn" class="btn btn-danger">Пожаловаться</button>
-+          </div>
-+        </header>
-+
-+        <div id="messages" class="messages" aria-live="polite"></div>
-+
-+        <form id="chat-form" class="chat-input">
-+          <textarea
-+            id="message-input"
-+            maxlength="500"
-+            placeholder="Введите сообщение..."
-+            rows="2"
-+            required
-+          ></textarea>
-+          <button type="submit" class="btn btn-accent">Отправить</button>
-+        </form>
-+      </section>
-+
-+      <section id="disconnected-screen" class="screen">
-+        <h2>Диалог завершён.</h2>
-+        <button id="new-chat-btn" class="btn btn-accent">Новый собеседник</button>
-+      </section>
-+    </main>
-+
-+    <script src="./app.js"></script>
-+  </body>
-+</html>
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>updated octo telegram</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section id="landing-screen" class="screen is-active">
+        <h1>updated octo telegram</h1>
+        <p>Анонимный чат 1-на-1. Без аккаунта. Ничего не сохраняется.</p>
+        <button id="connect-btn" class="btn btn-accent">Подключиться</button>
+      </section>
 
+      <section id="searching-screen" class="screen">
+        <h2>Поиск собеседника...</h2>
+        <button id="cancel-btn" class="btn">Отменить</button>
+      </section>
+
+      <section id="chat-screen" class="screen">
+        <header class="chat-header">
+          <span id="status-pill" class="status-pill status-connected">Подключено</span>
+          <div class="header-actions">
+            <button id="disconnect-btn" class="btn">Отключиться</button>
+            <button id="report-btn" class="btn btn-danger">Пожаловаться</button>
+          </div>
+        </header>
+
+        <div id="messages" class="messages" aria-live="polite"></div>
+
+        <form id="chat-form" class="chat-input">
+          <textarea
+            id="message-input"
+            maxlength="500"
+            placeholder="Введите сообщение..."
+            rows="2"
+            required
+          ></textarea>
+          <button type="submit" class="btn btn-accent">Отправить</button>
+        </form>
+      </section>
+
+      <section id="disconnected-screen" class="screen">
+        <h2>Диалог завершён.</h2>
+        <button id="new-chat-btn" class="btn btn-accent">Новый собеседник</button>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
+server.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
