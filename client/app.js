@@ -1,3 +1,52 @@
+'use strict';
+
+// If you deploy server on Render, set the full WSS URL below.
+// Example: const WS_URL = 'wss://your-service-name.onrender.com';
+const WS_URL = 'https://upgraded-octo-telegram-no5m.onrender.com';
+
+const screens = {
+  landing: document.getElementById('landing-screen'),
+  searching: document.getElementById('searching-screen'),
+  chat: document.getElementById('chat-screen'),
+  disconnected: document.getElementById('disconnected-screen'),
+};
+
+const connectBtn = document.getElementById('connect-btn');
+const cancelBtn = document.getElementById('cancel-btn');
+const disconnectBtn = document.getElementById('disconnect-btn');
+const reportBtn = document.getElementById('report-btn');
+const newChatBtn = document.getElementById('new-chat-btn');
+const chatForm = document.getElementById('chat-form');
+const messageInput = document.getElementById('message-input');
+const messagesEl = document.getElementById('messages');
+const statusPill = document.getElementById('status-pill');
+
+let socket;
+let currentState = 'idle';
+
+function resolveWebSocketUrl() {
+  if (WS_URL) {
+    return WS_URL;
+  }
+
+  const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+  return `${protocol}//${window.location.host}`;
+}
+
+function connectSocket() {
+  if (socket && (socket.readyState === WebSocket.OPEN || socket.readyState === WebSocket.CONNECTING)) {
+    return;
+  }
+
+  try {
+    socket = new WebSocket(resolveWebSocketUrl());
+  } catch (error) {
+    console.error('Failed to create WebSocket connection', error);
+    setDisconnectedState();
+    return;
+  }
+
+  socket.addEventListener('open', () => {
     setSearchingState();
     sendEvent({ type: 'find' });
   });
@@ -160,5 +209,3 @@ window.addEventListener('beforeunload', () => {
     sendEvent({ type: 'disconnect' });
   }
 });
-+});
-
