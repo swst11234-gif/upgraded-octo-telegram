@@ -1,11 +1,3 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
-diff --git a/README.md b/README.md
-index de40ffa3183ea2ea49adfa11ab899093cc49e3d5..990d3d12b6daf70ce813b9a6f8e9f8ca702f546f 100644
---- a/README.md
-+++ b/README.md
-@@ -1 +1,72 @@
--# upgraded-octo-telegram
-\ No newline at end of file
 +# updated octo telegram
 +
 +MVP веб-приложение для анонимного текстового чата 1-на-1 в реальном времени.
