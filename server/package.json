@@ -1,1 +1,15 @@
-
+{
+  "name": "updated-octo-telegram-server",
+  "version": "1.0.0",
+  "description": "Anonymous 1-on-1 chat server using ws",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
