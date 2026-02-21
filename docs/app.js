@@ -1,7 +1,7 @@
 'use strict';
 
 // For GitHub Pages set your Render endpoint explicitly, for example:
-// const WS_URL = 'wss://your-service.onrender.com';
+// const WS_URL = 'https://upgraded-octo-telegram-no5m.onrender.com';
 const WS_URL = 'https://upgraded-octo-telegram-no5m.onrender.com';
 
 const screens = {
