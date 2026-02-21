@@ -2,7 +2,7 @@
 
 // Example for GitHub Pages + Render:
 // const WS_URL = 'wss://your-service.onrender.com';
-const WS_URL = '';
+const WS_URL = 'https://upgraded-octo-telegram-no5m.onrender.com';
 
 const screens = {
   feed: document.getElementById('screen-feed'),
