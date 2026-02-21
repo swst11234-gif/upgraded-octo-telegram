@@ -20,7 +20,7 @@ MVP веб-приложение для realtime тикетов (help/feedback) �
 
 ## Структура
 
-- `client/` — статический фронтенд (GitHub Pages)
+- `docs/` — статический фронтенд (GitHub Pages)
 - `server/` — Node.js + `ws` (Render Web Service)
 
 ## Локальный запуск server
@@ -33,12 +33,12 @@ npm start
 
 Сервер использует `PORT` из `process.env.PORT` (по умолчанию 3000).
 
-## Локальный запуск client
+## Локальный запуск docs (frontend)
 
 Рекомендуемый вариант:
 
 ```bash
-cd client
+cd docs
 python3 -m http.server 8080
 ```
 
@@ -46,7 +46,7 @@ python3 -m http.server 8080
 
 ## Настройка WS_URL
 
-В `client/app.js`:
+В `docs/app.js`:
 
 ```js
 const WS_URL = '';
@@ -67,11 +67,12 @@ const WS_URL = 'wss://your-service-name.onrender.com';
 - **Build Command:** `npm install`
 - **Start Command:** `npm start`
 
-## Deploy client на GitHub Pages
+## Deploy docs на GitHub Pages
 
 Подойдут оба варианта:
 
-1. Публиковать из `root` (если `client` перенесён в публикуемую директорию)
-2. Публиковать через GitHub Actions из папки `client/` (или `/docs`, если копируете туда)
+Публикуйте сайт из папки `docs/` (Settings → Pages → Build and deployment → Deploy from a branch, выбрать ветку и `/docs`).
+
+Альтернатива: через GitHub Actions, публикуя содержимое `docs/` как artifact.
 
 Важно: перед деплоем клиента выставьте `WS_URL` на `wss://...` адрес Render.
