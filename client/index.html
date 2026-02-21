@@ -1,1 +1,79 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>updated octo telegram — tickets</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <h1>updated octo telegram</h1>
+        <p>Realtime help/feedback тикеты без аккаунтов и без хранения логов.</p>
+      </header>
 
+      <section id="screen-feed" class="screen is-active">
+        <div class="screen-head">
+          <h2>Лента тикетов</h2>
+          <button id="open-create-btn" class="btn btn-accent">Создать</button>
+        </div>
+        <div id="feed-list" class="ticket-list"></div>
+      </section>
+
+      <section id="screen-create" class="screen">
+        <div class="screen-head">
+          <h2>Создать тикет</h2>
+          <button id="cancel-create-btn" class="btn">Назад</button>
+        </div>
+
+        <form id="create-form" class="panel form-panel">
+          <label>
+            Категория
+            <select id="category-input" required>
+              <option value="help">help</option>
+              <option value="feedback">feedback</option>
+            </select>
+          </label>
+
+          <label>
+            Заголовок (до 80)
+            <input id="title-input" type="text" maxlength="80" required />
+          </label>
+
+          <label>
+            Описание (до 1000)
+            <textarea id="body-input" maxlength="1000" rows="6" required></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-accent">Опубликовать</button>
+        </form>
+      </section>
+
+      <section id="screen-ticket" class="screen">
+        <div class="screen-head">
+          <h2>Тикет</h2>
+          <button id="back-to-feed-btn" class="btn">К ленте</button>
+        </div>
+
+        <article id="ticket-meta" class="panel"></article>
+
+        <div class="screen-head compact">
+          <h3>Ответы</h3>
+          <button id="close-ticket-btn" class="btn btn-danger hidden">Закрыть тикет</button>
+        </div>
+
+        <div id="replies-list" class="replies-list"></div>
+
+        <form id="reply-form" class="panel reply-form">
+          <textarea id="reply-input" maxlength="500" rows="3" placeholder="Написать ответ..."></textarea>
+          <button type="submit" class="btn btn-accent">Отправить</button>
+        </form>
+      </section>
+
+      <p id="warning" class="warning hidden"></p>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
